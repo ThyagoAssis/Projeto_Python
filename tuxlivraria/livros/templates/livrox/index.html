@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+
+{%block 'title'%} Livros {%endblock%}
+
+{%block 'body'%}
+<section class="container justify-content-center " style="margin-top: 150px">
+    <h1 class="card-text" style="border-box: 0 0 1em; ">Exemplares</h1>
+    <div class="row">
+    {% for livro in livros%}
+        <div col="col-3" >
+            <div class="card" style="width: 16rem; margin-top: 20px; margin: 5px">
+              <img src="{{ livro.img }}" class="card-img-top" alt="..." style="height: 30%">
+              <div class="card-body">
+                <h5 class="card-text"><strong>Titulo:</strong> {{ livro.title }}</h5>
+                  <p class="card-text"><strong>Autor: </strong>  {{ livro.author }}</p>
+                  <p style="text-align: justify;">{{ livro.description }}</p>
+
+              </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+
+</section>
+{%endblock%}
